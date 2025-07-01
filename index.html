@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ringkasan Audio: Analisis Potensi Kognitif</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter and a Serif font for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles for a journal/academic look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        
+        h1, h2, h3 {
+             font-family: 'Lora', serif;
+        }
+
+        /* Custom focus ring for accessibility */
+        .play-button:focus-visible {
+            outline: 2px solid #4f46e5; /* indigo-600 */
+            outline-offset: 4px;
+        }
+
+        /* Custom progress bar styles for the new theme */
+        .progress-bar-container {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0; /* slate-200 */
+            border-radius: 9999px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Webkit (Chrome, Safari) specific styles for the thumb */
+        .progress-bar-container::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #312e81; /* indigo-900 */
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .progress-bar-container::-webkit-slider-thumb:hover {
+             background: #4f46e5; /* indigo-600 */
+        }
+
+        /* Mozilla (Firefox) specific styles for the thumb */
+        .progress-bar-container::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #312e81; /* indigo-900 */
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+        }
+        
+        .progress-bar-container::-moz-range-thumb:hover {
+            background: #4f46e5; /* indigo-600 */
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <div class="min-h-screen flex items-center justify-center p-4">
+        
+        <main class="bg-white w-full max-w-3xl rounded-lg shadow-xl overflow-hidden border border-slate-200">
+            <div class="p-8 sm:p-10">
+                <!-- Journal Header -->
+                <header class="mb-8">
+                    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+                        What If They Had No Access? A Counterfactual Analysis of Cognitive Potential and Systemic Opportunity in International Mathematical Olympiad Trajectories
+                    </h1>
+                    <div class="mt-4 space-y-2 text-slate-600">
+                        <p class="font-semibold">Alwin S.¹ and Sahira AK²</p>
+                        <p class="text-sm"><em>¹Universitas Indonesia, ²Universitas Gadjah Mada</em></p>
+                        <a href="https://www.researchgate.net/publication/393172637" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <span>Lihat Jurnal Asli di ResearchGate</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </header>
+
+                <!-- Abstract Section -->
+                <section class="mb-8">
+                    <h2 class="text-xl font-bold text-slate-800 border-b pb-2 mb-4">Abstrak</h2>
+                    <p class="text-slate-600 leading-relaxed text-justify">
+                        This paper conducts a counterfactual analysis to address a fundamental question in talent development: If a student with the innate cognitive ability of an International Mathematical Olympiad (IMO) medalist were born into an extremely under-resourced environment, would they realistically still reach the IMO? The IMO, as the world's most prestigious pre-collegiate mathematics competition, serves as the apex of mathematical talent. This study operationalizes cognitive potential using the Cattell-Horn-Carroll (CHC) theory of intelligence, defining an IMO-caliber mind as possessing an exceptionally high level of fluid reasoning (Gf) and quantitative knowledge (Gq).
+                    </p>
+                </section>
+
+                <!-- Audio Player Section -->
+                <section>
+                    <h2 class="text-xl font-bold text-slate-800 mb-4">Ringkasan Audio</h2>
+                    <div class="bg-slate-50 border rounded-lg p-6">
+                         <!-- 
+                          IMPORTANT: Replace the src attribute with the actual path to your audio file.
+                          PENTING: Ganti atribut src dengan path ke file audio Anda yang sebenarnya.
+                        -->
+                        <audio id="audio-player" src="/aduio.mp3" preload="metadata"></audio>
+
+                        <!-- Custom Controls -->
+                        <div class="flex items-center gap-4">
+                            <!-- Play/Pause Button -->
+                            <button id="play-pause-btn" class="play-button bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-md focus:outline-none flex-shrink-0">
+                                <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="ml-1"><path d="M8 5v14l11-7z"></path></svg>
+                                <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" class="hidden"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
+                            </button>
+                            <!-- Progress Bar and Time -->
+                            <div class="w-full">
+                                <input type="range" id="progress-bar" class="progress-bar-container" value="0" min="0" max="100" step="0.1">
+                                <div class="flex justify-between text-xs font-mono text-slate-500 mt-2">
+                                    <span id="current-time">00:00</span>
+                                    <span id="duration">00:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Get all the necessary elements from the DOM
+        const audioPlayer = document.getElementById('audio-player');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+
+        // --- State Management ---
+        let isPlaying = false;
+
+        // --- Functions ---
+        function togglePlayPause() {
+            if (isPlaying) {
+                audioPlayer.pause();
+            } else {
+                audioPlayer.play();
+            }
+        }
+        
+        function updatePlayPauseIcon() {
+            if (isPlaying) {
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            } else {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            }
+        }
+
+        function formatTime(timeInSeconds) {
+            const minutes = Math.floor(timeInSeconds / 60);
+            const seconds = Math.floor(timeInSeconds % 60);
+            return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function updateProgress() {
+            const { currentTime, duration } = audioPlayer;
+            if (duration) {
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.value = progressPercent;
+                currentTimeEl.textContent = formatTime(currentTime);
+            }
+        }
+
+        function seek() {
+            const { duration } = audioPlayer;
+            if (duration) {
+                const seekTime = (progressBar.value / 100) * duration;
+                audioPlayer.currentTime = seekTime;
+            }
+        }
+
+        // --- Event Listeners ---
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        audioPlayer.addEventListener('play', () => { isPlaying = true; updatePlayPauseIcon(); });
+        audioPlayer.addEventListener('pause', () => { isPlaying = false; updatePlayPauseIcon(); });
+        audioPlayer.addEventListener('ended', () => {
+            isPlaying = false;
+            updatePlayPauseIcon();
+            progressBar.value = 0;
+            audioPlayer.currentTime = 0;
+        });
+        audioPlayer.addEventListener('timeupdate', updateProgress);
+        audioPlayer.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(audioPlayer.duration);
+            progressBar.max = 100;
+        });
+        progressBar.addEventListener('input', seek);
+    </script>
+</body>
+</html>
